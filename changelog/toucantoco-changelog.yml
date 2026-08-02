@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs-v3.toucantoco.com/self-hosted-toucan/changelog
+scheme: semver (release-please, conventional commits; breaking changes called out per release)
+current_version: 5.0.0 (toucan-stack, self-hosted platform)
+additional_channels:
+  - name: Product release updates (blog)
+    entries:
+      - https://www.toucantoco.com/en/blog/product-release-update-june-2026
+      - https://www.toucantoco.com/en/blog/product-release-update-may-2026
+      - https://www.toucantoco.com/en/blog/product-release-update-april-2026
+  - name: Latest releases (docs)
+    url: https://docs-v3.toucantoco.com/additional-ressources/latest-releases
+entries:
+  - version: 5.0.0
+    date: '2026-07-17'
+    breaking: true
+    highlights:
+      - 'keycloak: replace curity with keycloak (auth service)'
+      - 'vault: dropped oauthapp plugin'
+      - 'canopee: keycloak behind canopee, the auth service is no longer exposed directly'
+      - 'keycloak: added SAML2 support'
+  - version: 4.3.0
+    date: '2026-04-28'
+    breaking: false
+    highlights:
+      - dependency train updates (backend v165, frontend v165, dataset_service v1.30.0, layout-service v1.33.0, gotenberg, garage)
+  - version: 4.2.0
+    date: '2026-04-07'
+    breaking: false
+    highlights:
+      - dependency train updates (backend v164, frontend v164, data-execution-service v0.14.1, spicedb v1.51.0)
+  - version: 4.1.0
+    date: '2026-03-09'
+    breaking: false
+    highlights:
+      - dependency train updates (backend v163, frontend v163, canopee v0.9.0, data-execution-service v0.13.0)
+      - 'laputa: logrotate'
+  - version: 4.0.0
+    date: '2026-01-26'
+    breaking: true
+    highlights:
+      - 'dataexecution: add oauth-encryption-secret to dataexecution (breaking)'

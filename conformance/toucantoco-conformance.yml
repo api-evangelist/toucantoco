@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: provider docs (docs-v3.toucantoco.com, docs.toucanai.cloud) + www.toucantoco.com/en/product/govern-secure
+standards:
+  - id: oauth2-jwt-bearer (RFC 7523)
+    conforms: true
+    evidence: >-
+      Classic embed auth exchanges an RS512-signed JWT assertion using
+      grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer (scope=embed) at the tenant
+      token endpoint (docs-v3.toucantoco.com/visualizations-and-layouts/embedding/authentication).
+  - id: oidc
+    conforms: true
+    evidence: >-
+      Token exchange uses a Keycloak OpenID Connect endpoint
+      (/api/auth/realms/<tenant>/protocol/openid-connect/token); self-hosted stack 5.0.0
+      ships Keycloak as the auth service.
+  - id: jwks (RFC 7517)
+    conforms: true
+    evidence: >-
+      Customers may host public keys on a JWKS endpoint with multiple keys and rotation
+      (embed authentication docs).
+  - id: saml2
+    conforms: true
+    evidence: 'Self-hosted changelog 5.0.0: "keycloak: added SAML2 support".'
+  - id: mcp (Model Context Protocol)
+    conforms: true
+    evidence: >-
+      Published MCP server over standard JSON-RPC HTTP transport at
+      https://toucanai.cloud/api/mcp with runtime tool discovery, prompts, and
+      notifications/progress (announcement 2026-06-16 + integration guide).
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      "Compliant infrastructure — Meets all RSSI expectations and GDPR standards"
+      (https://www.toucantoco.com/en/product/govern-secure); docs cover PII & personal
+      data, data storage & retention, and third-party subprocessors.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      API errors observed as a plain {code, message} envelope (e.g. HTTP 403
+      {"code":"NO_ACTIVE_SUBSCRIPTION",...}); no application/problem+json surface found.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: No security.txt on any probed host (see well-known/toucantoco-well-known.yml).
+notes: >-
+  A "Compliance posture (high-level)" page exists at
+  https://docs.toucanai.cloud/govern/compliance-and-data-isolation/compliance-posture-high-level
+  but is a placeholder as of this pass; no SOC 2 / ISO 27001 certification claims were
+  found published.

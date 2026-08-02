@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.toucantoco.com/ + https://docs-v3.toucantoco.com/self-hosted-toucan/changelog + https://docs.toucantoco.com/
+status_page: https://status.toucantoco.com/
+status_page_provider: Atlassian Statuspage ("ToucanToco status", verified HTTP 200 2026-07-21)
+versioning:
+  scheme: semver (self-hosted toucan-stack Helm releases, release-please conventional commits)
+  current: 5.0.0 (toucan-stack, 2026-07-17)
+  docs: https://docs-v3.toucantoco.com/self-hosted-toucan/changelog
+  lts: >-
+    Two documentation/product trains are live: docs.toucantoco.com explicitly serves the
+    "Long Term Support version of Toucan" while docs-v3.toucantoco.com serves the latest
+    (Toucan 3.0); the Toucan AI platform (docs.toucanai.cloud) is the current-generation
+    SaaS. A "Versioning strategy" page exists for Toucan AI
+    (https://docs.toucanai.cloud/scaling-and-performance-advanced/upgrades-and-maintenance/versioning-strategy)
+    but is a placeholder as of this pass.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  notes: >-
+    No published deprecation policy or RFC 8594 Sunset-header commitment was found;
+    breaking changes are flagged per-release in the changelog (e.g. 5.0.0 replaced the
+    Curity auth service with Keycloak). The MCP wire format is version-tagged
+    (schema "toucan-mcp-v1") with a stated promise that new major versions publish a new
+    tag and renderers should ignore unknown fields for forward compatibility.
+sla: null
+deprecated_operations: []

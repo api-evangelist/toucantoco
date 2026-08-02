@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.toucanai.cloud/embed/authentication/how-to/generate-a-sandbox-token
+docs:
+  - https://docs.toucanai.cloud/embed/authentication/how-to/generate-a-sandbox-token
+  - https://docs.toucanai.cloud/embed/authentication/how-to/generate-an-api-key
+  - https://docs.toucanai.cloud/embed/authentication/how-to/token-introspection
+sandbox:
+  name: Token Generation Sandbox (Toucan AI)
+  location: Settings > Embed tab > Token Generation Sandbox (in-product)
+  purpose: >-
+    Generate sandbox embed tokens to test embedding visualizations, dashboards, and the
+    AI assistant in a controlled environment before production rollout.
+  test_vs_live: >-
+    Sandbox tokens are generated interactively in the UI from an API key; production
+    tokens are minted server-side via POST https://toucanai.cloud/embed/generate-token.
+    Both are time-limited JWTs (1 hour by default).
+  token_lifetime: 1h (default)
+  rls_testing: >-
+    Custom Attributes can be filled in the sandbox form to test Row-Level Security
+    scoping before go-live.
+  introspection: >-
+    A Token Introspection tool (Settings > Embed & access) decodes any sandbox or
+    production token to verify distinctId, role, custom attributes, permissions
+    (can_view/can_edit/can_query), and expiration.
+notes: >-
+  No magic test identifiers, test cards, or fixture datasets are published; the sandbox
+  surface is token-scoped testing of embeds. The classic platform separately documents a
+  "Check token" validator in Embed Settings for embed-context truncation testing
+  (https://docs-v3.toucantoco.com/visualizations-and-layouts/embedding/authentication).

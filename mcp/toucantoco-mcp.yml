@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://www.toucantoco.com/en/blog/announcement-toucan-mcp
+docs:
+  - https://docs.toucanai.cloud/embed/embedding-overview/how-to/integrate-into-your-ai-chat
+server:
+  name: toucan-ai-tools
+  transport: http
+  url: https://toucanai.cloud/api/mcp
+  protocol: MCP JSON-RPC over HTTP (POST /api/mcp)
+  announced: '2026-06-16'
+authentication:
+  type: bearer
+  detail: >-
+    Bearer embed token, generated server-side from an organization API key via
+    POST https://toucanai.cloud/embed/generate-token (x-api-key header). Tokens are
+    organization-scoped and can carry end-user attributes so row-level security
+    applies to every query the agent runs.
+verified:
+  date: '2026-07-21'
+  probe: POST https://toucanai.cloud/api/mcp (unauthenticated)
+  result: 'HTTP 403 {"code":"NO_ACTIVE_SUBSCRIPTION","message":"Your organization does not have an active subscription. Please subscribe to continue."}'
+capabilities:
+  - tools (runtime-discovered; the announcement describes the same seven typed LangChain
+    tools that power Toucan's in-product AI assistant, covering the explore -> query ->
+    visualize -> explain loop against connected PostgreSQL and Google BigQuery sources,
+    read-only)
+  - prompts (a `tool-usage` prompt ships the system-prompt addendum the host LLM needs
+    to relay Toucan's answers verbatim)
+  - notifications/progress (in-progress notifications during tool runs)
+tools:
+  - name: ask_toucan_assistant
+    description: >-
+      Data-question tool documented in the "Integrate Toucan into your own AI chat"
+      guide; returns a self-contained JSON envelope (schema toucan-mcp-v1) with a
+      markdown `answer`, a `visualizations` array renderable by the
+      <tc-result-renderer> web component, and a `threadId` for conversational memory.
+notes: >-
+  The blog announcement states the server exposes seven tools (the same ones behind the
+  in-product assistant) discovered automatically over MCP; only ask_toucan_assistant is
+  named in public docs, so the full tool list is left to runtime discovery rather than
+  guessed here.

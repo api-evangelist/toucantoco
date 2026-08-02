@@ -1,0 +1,89 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org + https://pypi.org (registry search) + https://github.com/ToucanToco
+packages:
+  - language: python
+    registry: pypi
+    name: toucan-data-sdk
+    version: 7.6.0
+    url: https://pypi.org/project/toucan-data-sdk/
+    install: pip install toucan-data-sdk
+    repository: https://github.com/ToucanToco/toucan-data-sdk
+    description: Toucan data SDK
+    official: true
+  - language: python
+    registry: pypi
+    name: toucan-client
+    version: 1.1.2
+    url: https://pypi.org/project/toucan-client/
+    install: pip install toucan-client
+    repository: https://github.com/ToucanToco/toucan-client
+    description: Toucan API client
+    official: true
+  - language: python
+    registry: pypi
+    name: toucan-connectors
+    version: 10.3.2
+    url: https://pypi.org/project/toucan-connectors/
+    install: pip install toucan-connectors
+    repository: https://github.com/ToucanToco/toucan-connectors
+    description: Toucan Toco data source connectors (50+ databases and online services)
+    official: true
+  - language: python
+    registry: pypi
+    name: peakina
+    version: 0.19.4
+    url: https://pypi.org/project/peakina/
+    install: pip install peakina
+    repository: https://github.com/ToucanToco/peakina
+    description: pandas readers on steroids (remote files, glob patterns, cache)
+    official: true
+  - language: python
+    registry: pypi
+    name: fastexcel
+    version: 0.20.2
+    url: https://pypi.org/project/fastexcel/
+    install: pip install fastexcel
+    repository: https://github.com/ToucanToco/fastexcel
+    description: A fast excel file reader for Python, written in Rust
+    official: true
+  - language: python
+    registry: pypi
+    name: weaverbird
+    version: 0.62.2
+    url: https://pypi.org/project/weaverbird/
+    install: pip install weaverbird
+    repository: https://github.com/ToucanToco/weaverbird
+    description: A visual data pipeline builder with various backends (the engine behind Toucan YouPrep / data steps)
+    official: true
+  - language: javascript
+    registry: npm
+    name: '@toucantoco/components'
+    version: 0.1.0-alpha.16
+    url: https://www.npmjs.com/package/@toucantoco/components
+    install: npm install @toucantoco/components
+    repository: https://github.com/ToucanToco/components
+    description: Toucan Toco's Component Library
+    official: true
+  - language: javascript
+    registry: npm
+    name: visual-query-builder
+    version: 0.3.0
+    url: https://www.npmjs.com/package/visual-query-builder
+    install: npm install visual-query-builder
+    repository: https://github.com/ToucanToco/weaverbird
+    description: A generic Visual Query Builder built in Vue.js (from the weaverbird project)
+    official: true
+  - language: javascript
+    registry: npm
+    name: tc-sparklines
+    version: 0.2.4
+    url: https://www.npmjs.com/package/tc-sparklines
+    install: npm install tc-sparklines
+    repository: https://github.com/ToucanToco/sparklines
+    description: Trendy graphs (sparklines)
+    official: true
+notes: >-
+  The Toucan AI embed surface is delivered as a hosted script
+  (https://toucanai.cloud/embed/embed.js) registering web components rather than an
+  installable npm SDK; see components/toucantoco-components.yml.

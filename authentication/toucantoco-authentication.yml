@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs-v3.toucantoco.com/visualizations-and-layouts/embedding/authentication
+docs:
+  - https://docs-v3.toucantoco.com/visualizations-and-layouts/embedding/authentication
+  - https://docs-v3.toucantoco.com/visualizations-and-layouts/embedding/embed-sdk/embed-sdk-authentication
+  - https://docs.toucanai.cloud/embed/authentication
+  - https://docs.toucanai.cloud/embed/authentication/how-to/generate-an-api-key
+  - https://docs.toucanai.cloud/embed/authentication/how-to/generate-a-token-via-api
+  - https://docs.toucanai.cloud/embed/authentication/how-to/token-introspection
+summary:
+  types: [apiKey, oauth2, http]
+  api_key_in: [header]
+  oauth2_flows: [jwt-bearer]
+  notes: Two product generations with distinct auth surfaces (classic Toucan platform and Toucan AI cloud).
+surfaces:
+  - product: Toucan (classic platform embeds)
+    scheme: oauth2 JWT-bearer assertion exchange
+    detail: >-
+      Embed authentication uses the OAuth 2.0 JWT bearer grant
+      (grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer, scope=embed) against a
+      Keycloak-style OpenID Connect token endpoint:
+      POST https://<instance>/api/auth/realms/<tenant>/protocol/openid-connect/token,
+      authenticated with client id toucan-embed-client + client secret. The JWT
+      assertion is signed RS512 with a customer RSA key pair (>=2048 bits, public key
+      uploaded to the admin area) or keys published on a customer-hosted JWKS endpoint
+      (multiple keys, rotation supported). The assertion carries an embed_context
+      (username, workspace_id, roles USER/ADMIN, privileges per app, groups, arbitrary
+      attributes, and non-displayed secrets; max 3.5KB) and is exchanged for an opaque
+      access token passed to the embed script or Embed SDK.
+  - product: Toucan AI (toucanai.cloud)
+    scheme: apiKey -> signed JWT access token
+    detail: >-
+      An organization API key (from User Settings) is used server-side via the
+      x-api-key header on POST https://toucanai.cloud/embed/generate-token with a user
+      object (distinctId, role e.g. "explorer", attributes for RLS/custom traits). The
+      response returns a signed JWT ({token, expiresIn: "1h"}) used as auth-token by
+      the <tc-dashboard>/<tc-ai-assistant> web components and as an Authorization
+      Bearer token on the MCP endpoint (https://toucanai.cloud/api/mcp). A Token
+      Introspection tool in Embed settings decodes user info, custom attributes,
+      permissions (can_view/can_edit/can_query), and expiration. Docs stress
+      server-side-only key handling.

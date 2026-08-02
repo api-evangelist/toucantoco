@@ -1,21 +1,69 @@
 aid: toucantoco
-name: toucantoco
-description: toucantoco is a company surfaced as a portfolio company of balderton-capital and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+name: Toucan Toco
+description: >-
+  Toucan Toco is a Paris-founded embedded analytics and data storytelling platform used
+  by ISVs and SaaS products to ship white-label, customer-facing dashboards and
+  conversational analytics without building BI infrastructure in-house. Its
+  current-generation Toucan AI cloud (toucanai.cloud) pairs guided dashboards and a
+  semantic layer with an AI analytics assistant, embeds via framework-agnostic web
+  components (tc-dashboard, tc-ai-assistant), authenticates embeds with server-side
+  generated JWT tokens carrying row-level-security attributes, and exposes its typed
+  analytics tools to any MCP-compatible agent at toucanai.cloud/api/mcp. Trusted by
+  350+ companies; backed by Balderton Capital.
 url: https://raw.githubusercontent.com/api-evangelist/toucantoco/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.toucantoco.com/hubfs/Embedded%20Analytics%20your%20users%20will%20love!.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - balderton-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
-- Company
-apis: []
+- Analytics
+- Business Intelligence
+- Embedded Analytics
+- Data Visualization
+- Data Storytelling
+- Dashboards
+- AI
+apis:
+- name: Toucan AI Platform API
+  description: >-
+    The developer surface of the Toucan AI cloud - server-side token generation
+    (POST /embed/generate-token with an x-api-key header), embed delivery via web
+    components loaded from /embed/embed.js, and an MCP endpoint (POST /api/mcp,
+    bearer-token authenticated) exposing the platform's typed analytics tools
+    (explore, query, visualize, explain) to AI agents. Reference docs also cover the
+    data-steps transformation DSL used in chart queries.
+  humanURL: https://docs.toucanai.cloud/references/apis
+  baseURL: https://toucanai.cloud
+  tags:
+  - Analytics
+  - Embedded Analytics
+  - AI
+  properties:
+  - type: Documentation
+    url: https://docs.toucanai.cloud/
+  - type: APIReference
+    url: https://docs.toucanai.cloud/references/apis
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +72,63 @@ maintainers:
 common:
 - type: Website
   url: https://toucantoco.com/
+- type: DeveloperPortal
+  url: https://docs.toucanai.cloud/
+- type: Documentation
+  url: https://docs.toucanai.cloud/
+- type: Documentation
+  name: Toucan 3.0 documentation
+  url: https://docs-v3.toucantoco.com/
+- type: Documentation
+  name: Long Term Support documentation
+  url: https://docs.toucantoco.com/
+- type: APIReference
+  url: https://docs.toucanai.cloud/references/apis
+- type: GettingStarted
+  url: https://docs.toucanai.cloud/getting-started/quick-start
+- type: Support
+  url: https://www.toucantoco.com/en/help.html
+- type: Blog
+  url: https://www.toucantoco.com/en/blog
+- type: GitHubOrganization
+  url: https://github.com/ToucanToco
+- type: Pricing
+  url: https://www.toucantoco.com/en/plans
+- type: SignUp
+  url: https://toucanai.cloud/auth/sign-up
+- type: TermsOfService
+  url: https://www.toucantoco.com/en/legal-services-saas
+- type: PrivacyPolicy
+  url: https://www.toucantoco.com/en/legal-information.html
+- type: StatusPage
+  url: https://status.toucantoco.com/
+- type: ChangeLog
+  url: changelog/toucantoco-changelog.yml
+- type: Lifecycle
+  url: lifecycle/toucantoco-lifecycle.yml
+- type: Authentication
+  url: authentication/toucantoco-authentication.yml
+- type: Sandbox
+  url: sandbox/toucantoco-sandbox.yml
+- type: MCPServer
+  url: mcp/toucantoco-mcp.yml
+- type: LLMsTxt
+  name: Toucan 3.0 llms.txt (docs-v3.toucantoco.com)
+  url: llms/toucantoco-llms.txt
+- type: LLMsTxt
+  name: Toucan AI llms.txt (docs.toucanai.cloud)
+  url: llms/toucantoco-toucanai-llms.txt
+- type: Packages
+  url: packages/toucantoco-packages.yml
+- type: SDKs
+  url: packages/toucantoco-packages.yml
+- type: Conformance
+  url: conformance/toucantoco-conformance.yml
+- type: Compliance
+  url: https://www.toucantoco.com/en/product/govern-secure
+- type: ErrorCatalog
+  url: errors/toucantoco-error-codes.yml
+- type: Components
+  url: components/toucantoco-components.yml
+- type: DomainSecurity
+  url: security/toucantoco-domain-security.yml

@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.toucanai.cloud/references/error-codes + live observation of https://toucanai.cloud/api/mcp
+format: code-message envelope (not RFC 9457)
+envelope:
+  shape: '{"code": "<UPPER_SNAKE_CODE>", "message": "<human-readable message>"}'
+  evidence: >-
+    Observed live 2026-07-21: unauthenticated POST https://toucanai.cloud/api/mcp
+    returned HTTP 403 {"code":"NO_ACTIVE_SUBSCRIPTION","message":"Your organization
+    does not have an active subscription. Please subscribe to continue."}. The MCP
+    announcement also states tools return "structured error responses"; MCP
+    visualization payloads carry a {type: "error", title?, message} variant.
+docs:
+  reference: https://docs.toucanai.cloud/references/error-codes
+  categories:
+    - name: Authentication errors
+      url: https://docs.toucanai.cloud/references/error-codes/authentication-errors
+    - name: Data errors
+      url: https://docs.toucanai.cloud/references/error-codes/data-errors
+    - name: Embedding errors
+      url: https://docs.toucanai.cloud/references/error-codes/embedding-errors
+  note: >-
+    The error-codes reference section exists in the Toucan AI docs but its category
+    pages are placeholders (headings only) as of this pass — no enumerable code
+    registry is published yet. Troubleshooting pages cover token errors, permission
+    issues, data not appearing, and performance issues.
+problems:
+  - status: 403
+    code: NO_ACTIVE_SUBSCRIPTION
+    title: Organization has no active subscription
+    detail: Your organization does not have an active subscription. Please subscribe to continue.
+    source: live probe of POST https://toucanai.cloud/api/mcp (2026-07-21)

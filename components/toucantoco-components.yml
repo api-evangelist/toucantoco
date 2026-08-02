@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.toucanai.cloud/embed/embedding-methods/web-component-embedding
+docs:
+  - https://docs.toucanai.cloud/embed/embedding-methods/web-component-embedding
+  - https://docs.toucanai.cloud/embed/embedding-methods/sdk-based-embedding
+  - https://docs.toucanai.cloud/embed/embedding-methods/api-based-embedding
+  - https://docs-v3.toucantoco.com/visualizations-and-layouts/embedding/embed-sdk
+loader_libraries:
+  - name: Toucan AI embed script
+    url: https://toucanai.cloud/embed/embed.js
+    detail: Single module script tag; registers the Toucan AI custom elements globally.
+  - name: Classic embed launcher
+    url: https://<instance>.toucantoco.com/scripts/embedLauncher.js?id={EMBED_ID}&token=...
+    detail: Per-instance script that inserts a classic Toucan embed; also attaches the TcTcEmbed SDK object to window.
+families:
+  - family: Toucan AI web components
+    components:
+      - name: tc-dashboard
+        description: Renders an embedded dashboard (dashboard-id, auth-token, server-url, data-theme attributes).
+      - name: tc-ai-assistant
+        description: Embeds the conversational AI analytics assistant.
+      - name: tc-result-renderer
+        description: >-
+          Renders MCP tool-result visualization payloads (schema toucan-mcp-v1) inside a
+          custom AI chat; takes its input via the payload DOM property.
+  - family: Classic embed SDK (TcTcEmbed)
+    components:
+      - name: TcTcEmbed
+        description: >-
+          Window-attached SDK object for classic embeds: initialize(), getAll(),
+          embedDOMIds(), setExtraVariablesForAllEmbeds(), insertEmbedById(),
+          sendPDFReport(), plus filter access; authenticated with an admin-scoped SDK token.
+  - family: Component library (open source)
+    components:
+      - name: '@toucantoco/components'
+        description: Toucan Toco's Vue component library on npm (0.1.0-alpha.16).
