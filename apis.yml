@@ -43,6 +43,14 @@ tags:
 - Data Visualization
 - Data Storytelling
 - Dashboards
+- Artificial Intelligence
+tags_raw:
+- Analytics
+- Business Intelligence
+- Embedded Analytics
+- Data Visualization
+- Data Storytelling
+- Dashboards
 - AI
 apis:
 - name: Toucan AI Platform API
@@ -56,6 +64,10 @@ apis:
   humanURL: https://docs.toucanai.cloud/references/apis
   baseURL: https://toucanai.cloud
   tags:
+  - Analytics
+  - Embedded Analytics
+  - Artificial Intelligence
+  tags_raw:
   - Analytics
   - Embedded Analytics
   - AI
