@@ -60,3 +60,63 @@ plans:
   currency: EUR
   period: one-time
   unit: 4 days
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - object
+  plans:
+  - name: Start with Toucan
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Pack Start
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Pack Grow
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Pack Scale
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: 'Add-on: Onboarding Sessions'
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - one-time
+  - name: 'Add-on: Dedicated Custom Professional Service'
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
