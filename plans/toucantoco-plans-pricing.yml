@@ -1,0 +1,62 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.toucantoco.com/en/plans
+sources:
+- https://www.toucantoco.com/en/plans
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: Dedicated Server Infrastructure “Self-Hosted”
+  managed_tier: Pack Start
+published: true
+note: Page states an entry price of €890/month and add-on prices; the four named packs (Start, Grow, Scale,
+  Enterprise) list features only with 'Know More' links, no per-pack prices. Self-hosted dedicated server
+  infrastructure is offered as a paid add-on.
+plan_count: 7
+currency: EUR
+plans:
+- name: Start with Toucan
+  price_text: €890/month
+  price: 890
+  currency: EUR
+  period: month
+  included_quota: Deploy unlimited embedded analytics, dashboards and web apps
+- name: Pack Start
+  price_text: Know More
+  period: none
+  included_quota: 2 builders, 20 Internal Users, Up to 10 Client Users, unlimited embedded dashboards,
+    Generic Help Desk, Onboarding 4 sessions
+- name: Pack Grow
+  price_text: Know More
+  period: none
+  included_quota: '5 builders, 50 Internal Users, Up to 100 Client Users, Full White Label, Embed SDK,
+    Dedicated CSM, Onboarding : 6 sessions'
+- name: Pack Scale
+  price_text: Know More
+  period: none
+  included_quota: '10 builders, 100 Internal Users, Up to 1000 Clients Users, Self-Service capabilities,
+    VIP Support, Onboarding : 10 Sessions'
+- name: Enterprise
+  price_text: Know More
+  period: none
+  included_quota: On demand builders, unlimited deployment, custom architecture, Unlimited Onboarding
+    Sessions
+- name: 'Add-on: Onboarding Sessions'
+  price_text: Onboarding Sessions - 500€/session
+  price: 500
+  currency: EUR
+  period: one-time
+  unit: session
+- name: 'Add-on: Dedicated Custom Professional Service'
+  price_text: Dedicated Custom Professional Service 4 Days - 3K€
+  currency: EUR
+  period: one-time
+  unit: 4 days
