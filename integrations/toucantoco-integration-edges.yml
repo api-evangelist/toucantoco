@@ -18,9 +18,94 @@ edges:
   category: Microsoft Teams app
   publisher_verified:
   - Microsoft 365 Publisher Attestation
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@toucantoco/components
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@toucantoco/components'
+      version: 0.1.0-alpha.16
+      released: '2022-04-07'
+      released_field: modified
+      lapsed: true
+      page: https://www.npmjs.com/package/@toucantoco/components
+      repo_leg: github-org:toucantoco
+      publisher_leg: email:toucantoco.com
+      matched_by: domain
+    - name: tc-sparklines
+      version: 0.2.4
+      released: '2022-06-27'
+      released_field: modified
+      lapsed: true
+      page: https://www.npmjs.com/package/tc-sparklines
+      repo_leg: domain:toucantoco.com
+      publisher_leg: email:toucantoco.com
+      matched_by: domain
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
+- partner_name: PyPI
+  partner: pypi
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (Python)
+  evidence: https://pypi.org/project/toucan-client/
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: toucan-client
+      version: 1.1.2
+      released: '2022-04-20'
+      released_field: upload_time
+      lapsed: true
+      page: https://pypi.org/project/toucan-client/
+      repo_leg: github-org:toucantoco
+      publisher_leg: email:toucantoco.com
+      matched_by: domain
+    - name: toucan-data-sdk
+      version: 7.6.0
+      released: '2023-04-20'
+      released_field: upload_time
+      lapsed: true
+      page: https://pypi.org/project/toucan-data-sdk/
+      repo_leg: github-org:toucantoco
+      publisher_leg: email:toucantoco.com
+      matched_by: domain
+    current: false
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
 generated: '2026-10-18'
 method: searched
 source:
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 checked:
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
